@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <button id="toggle-leaderboard" class="toggle-leaderboard">
+        <i class="fas fa-trophy"></i>
+      </button>
+
+      <button id="toggle-voice" class="toggle-voice">
+        <i class="fas fa-microphone"></i>
+      </button>
+
+      <!-- AI Commentary -->
+      <div id="ai-commentary" class="ai-commentary hidden">
+        <div class="ai-bubble">
+          <i class="fas fa-robot"></i>
+          <p id="commentary-text"></p>
+        </div>
+      </div>
+
+      <!-- Player Registration -->
+      <div id="player-registration" class="container glass-effect">
+        <h2 class="title">Rock Paper Scissors</h2>
+        <p class="subtitle">Test your luck against the computer!</p>
+        <div class="input-group">
+          <input type="text" id="player-name" placeholder="Enter your name" required>
+          <button id="start-game" class="primary-button">Start Game</button>
+        </div>
+      </div>
+
+      <!-- Game Section -->
+      <div id="game-section" class="container glass-effect hidden">
+        <div class="game-info">
+          <h2>Player: <span id="current-player"></span></h2>
+          <h3>Score: <span id="player-score">0</span></h3>
+        </div>
+
+        <div class="choices">
+          <button class="choice glass-effect" data-choice="rock">
+            <span class="emoji">✊</span>
+            <span>Rock</span>
+          </button>
+          <button class="choice glass-effect" data-choice="paper">
+            <span class="emoji">✋</span>
+            <span>Paper</span>
+          </button>
+          <button class="choice glass-effect" data-choice="scissors">
+            <span class="emoji">✌️</span>
+            <span>Scissors</span>
+          </button>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div class="choices-display">
+            <div class="player-choice">
+              <h3>Your Choice</h3>
+              <span id="player-choice-display" class="emoji-large"></span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="computer-choice">
+              <h3>Computer's Choice</h3>
+              <span id="computer-choice-display" class="emoji-large"></span>
+            </div>
+          </div>
+          <h2 id="result-text"></h2>
+          <div class="confetti-container" id="confetti-container"></div>
+          <button id="new-player" class="new-player-btn">New Player</button>
+        </div>
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard container glass-effect hidden" id="leaderboard-container">
+        <div class="leaderboard-header">
+          <h2><i class="fas fa-trophy"></i> Top Players</h2>
+        </div>
+        <div id="leaderboard-list">
+          <!-- Leaderboard entries will be inserted here -->
+        </div>
+      </div>
+    </div>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
